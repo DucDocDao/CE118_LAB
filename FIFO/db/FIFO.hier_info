@@ -1,0 +1,384 @@
+|FIFO
+OUT0 <= MUX41:inst4.Q
+read/write => inst13.IN0
+read/write => inst8.IN0
+EN => inst9.IN1
+EN => COUNTER:inst12.E
+EN => inst8.IN1
+reset => inst20.IN0
+clk => COUNTER:inst12.clk
+clk => SRwPL:inst.Clk
+clk => SRwPL:inst1.Clk
+clk => SRwPL:inst2.Clk
+clk => SRwPL:inst3.Clk
+IN0 => SRwPL:inst.IL
+OUT1 <= MUX41:inst5.Q
+IN1 => SRwPL:inst1.IL
+OUT2 <= MUX41:inst6.Q
+IN2 => SRwPL:inst2.IL
+OUT3 <= MUX41:inst7.Q
+IN3 => SRwPL:inst3.IL
+full <= inst10.DB_MAX_OUTPUT_PORT_TYPE
+empty <= inst17.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FIFO|MUX41:inst4
+Q <= 6.DB_MAX_OUTPUT_PORT_TYPE
+INH => 7.IN0
+S1 => 8.IN0
+S0 => 10.IN0
+D0 => 2.IN3
+D1 => 3.IN3
+D2 => 4.IN3
+D3 => 5.IN3
+
+
+|FIFO|COUNTER:inst12
+output_carry <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+E => inst16.IN0
+E => inst12.IN1
+E => inst19.IN2
+reset => inst27.ACLR
+reset => inst26.ACLR
+reset => inst25.ACLR
+reset => inst24.ACLR
+clk => inst27.CLK
+clk => inst26.CLK
+clk => inst25.CLK
+clk => inst24.CLK
+D => inst16.IN2
+D => inst28.IN0
+D => inst17.IN2
+D => inst21.IN2
+D => inst22.IN2
+Q0 <= inst27.DB_MAX_OUTPUT_PORT_TYPE
+Q1 <= inst26.DB_MAX_OUTPUT_PORT_TYPE
+Q2 <= inst25.DB_MAX_OUTPUT_PORT_TYPE
+Q3 <= inst24.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FIFO|SRwPL:inst
+Q3 <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+reset => inst4.ACLR
+reset => inst5.ACLR
+reset => inst6.ACLR
+reset => inst7.ACLR
+Clk => inst4.CLK
+Clk => inst5.CLK
+Clk => inst6.CLK
+Clk => inst7.CLK
+S0 => MUX41:inst.S0
+S0 => MUX41:inst1.S0
+S0 => MUX41:inst2.S0
+S0 => MUX41:inst3.S0
+IR => MUX41:inst3.D2
+S1 => MUX41:inst3.S1
+S1 => MUX41:inst2.S1
+S1 => MUX41:inst1.S1
+S1 => MUX41:inst.S1
+I0 => MUX41:inst3.D1
+I1 => MUX41:inst2.D1
+I2 => MUX41:inst1.D1
+IL => MUX41:inst.D3
+I3 => MUX41:inst.D1
+Q2 <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+Q1 <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+Q0 <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FIFO|SRwPL:inst|MUX41:inst
+Q <= 6.DB_MAX_OUTPUT_PORT_TYPE
+INH => 7.IN0
+S1 => 8.IN0
+S0 => 10.IN0
+D0 => 2.IN3
+D1 => 3.IN3
+D2 => 4.IN3
+D3 => 5.IN3
+
+
+|FIFO|SRwPL:inst|MUX41:inst1
+Q <= 6.DB_MAX_OUTPUT_PORT_TYPE
+INH => 7.IN0
+S1 => 8.IN0
+S0 => 10.IN0
+D0 => 2.IN3
+D1 => 3.IN3
+D2 => 4.IN3
+D3 => 5.IN3
+
+
+|FIFO|SRwPL:inst|MUX41:inst2
+Q <= 6.DB_MAX_OUTPUT_PORT_TYPE
+INH => 7.IN0
+S1 => 8.IN0
+S0 => 10.IN0
+D0 => 2.IN3
+D1 => 3.IN3
+D2 => 4.IN3
+D3 => 5.IN3
+
+
+|FIFO|SRwPL:inst|MUX41:inst3
+Q <= 6.DB_MAX_OUTPUT_PORT_TYPE
+INH => 7.IN0
+S1 => 8.IN0
+S0 => 10.IN0
+D0 => 2.IN3
+D1 => 3.IN3
+D2 => 4.IN3
+D3 => 5.IN3
+
+
+|FIFO|MUX41:inst5
+Q <= 6.DB_MAX_OUTPUT_PORT_TYPE
+INH => 7.IN0
+S1 => 8.IN0
+S0 => 10.IN0
+D0 => 2.IN3
+D1 => 3.IN3
+D2 => 4.IN3
+D3 => 5.IN3
+
+
+|FIFO|SRwPL:inst1
+Q3 <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+reset => inst4.ACLR
+reset => inst5.ACLR
+reset => inst6.ACLR
+reset => inst7.ACLR
+Clk => inst4.CLK
+Clk => inst5.CLK
+Clk => inst6.CLK
+Clk => inst7.CLK
+S0 => MUX41:inst.S0
+S0 => MUX41:inst1.S0
+S0 => MUX41:inst2.S0
+S0 => MUX41:inst3.S0
+IR => MUX41:inst3.D2
+S1 => MUX41:inst3.S1
+S1 => MUX41:inst2.S1
+S1 => MUX41:inst1.S1
+S1 => MUX41:inst.S1
+I0 => MUX41:inst3.D1
+I1 => MUX41:inst2.D1
+I2 => MUX41:inst1.D1
+IL => MUX41:inst.D3
+I3 => MUX41:inst.D1
+Q2 <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+Q1 <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+Q0 <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FIFO|SRwPL:inst1|MUX41:inst
+Q <= 6.DB_MAX_OUTPUT_PORT_TYPE
+INH => 7.IN0
+S1 => 8.IN0
+S0 => 10.IN0
+D0 => 2.IN3
+D1 => 3.IN3
+D2 => 4.IN3
+D3 => 5.IN3
+
+
+|FIFO|SRwPL:inst1|MUX41:inst1
+Q <= 6.DB_MAX_OUTPUT_PORT_TYPE
+INH => 7.IN0
+S1 => 8.IN0
+S0 => 10.IN0
+D0 => 2.IN3
+D1 => 3.IN3
+D2 => 4.IN3
+D3 => 5.IN3
+
+
+|FIFO|SRwPL:inst1|MUX41:inst2
+Q <= 6.DB_MAX_OUTPUT_PORT_TYPE
+INH => 7.IN0
+S1 => 8.IN0
+S0 => 10.IN0
+D0 => 2.IN3
+D1 => 3.IN3
+D2 => 4.IN3
+D3 => 5.IN3
+
+
+|FIFO|SRwPL:inst1|MUX41:inst3
+Q <= 6.DB_MAX_OUTPUT_PORT_TYPE
+INH => 7.IN0
+S1 => 8.IN0
+S0 => 10.IN0
+D0 => 2.IN3
+D1 => 3.IN3
+D2 => 4.IN3
+D3 => 5.IN3
+
+
+|FIFO|MUX41:inst6
+Q <= 6.DB_MAX_OUTPUT_PORT_TYPE
+INH => 7.IN0
+S1 => 8.IN0
+S0 => 10.IN0
+D0 => 2.IN3
+D1 => 3.IN3
+D2 => 4.IN3
+D3 => 5.IN3
+
+
+|FIFO|SRwPL:inst2
+Q3 <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+reset => inst4.ACLR
+reset => inst5.ACLR
+reset => inst6.ACLR
+reset => inst7.ACLR
+Clk => inst4.CLK
+Clk => inst5.CLK
+Clk => inst6.CLK
+Clk => inst7.CLK
+S0 => MUX41:inst.S0
+S0 => MUX41:inst1.S0
+S0 => MUX41:inst2.S0
+S0 => MUX41:inst3.S0
+IR => MUX41:inst3.D2
+S1 => MUX41:inst3.S1
+S1 => MUX41:inst2.S1
+S1 => MUX41:inst1.S1
+S1 => MUX41:inst.S1
+I0 => MUX41:inst3.D1
+I1 => MUX41:inst2.D1
+I2 => MUX41:inst1.D1
+IL => MUX41:inst.D3
+I3 => MUX41:inst.D1
+Q2 <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+Q1 <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+Q0 <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FIFO|SRwPL:inst2|MUX41:inst
+Q <= 6.DB_MAX_OUTPUT_PORT_TYPE
+INH => 7.IN0
+S1 => 8.IN0
+S0 => 10.IN0
+D0 => 2.IN3
+D1 => 3.IN3
+D2 => 4.IN3
+D3 => 5.IN3
+
+
+|FIFO|SRwPL:inst2|MUX41:inst1
+Q <= 6.DB_MAX_OUTPUT_PORT_TYPE
+INH => 7.IN0
+S1 => 8.IN0
+S0 => 10.IN0
+D0 => 2.IN3
+D1 => 3.IN3
+D2 => 4.IN3
+D3 => 5.IN3
+
+
+|FIFO|SRwPL:inst2|MUX41:inst2
+Q <= 6.DB_MAX_OUTPUT_PORT_TYPE
+INH => 7.IN0
+S1 => 8.IN0
+S0 => 10.IN0
+D0 => 2.IN3
+D1 => 3.IN3
+D2 => 4.IN3
+D3 => 5.IN3
+
+
+|FIFO|SRwPL:inst2|MUX41:inst3
+Q <= 6.DB_MAX_OUTPUT_PORT_TYPE
+INH => 7.IN0
+S1 => 8.IN0
+S0 => 10.IN0
+D0 => 2.IN3
+D1 => 3.IN3
+D2 => 4.IN3
+D3 => 5.IN3
+
+
+|FIFO|MUX41:inst7
+Q <= 6.DB_MAX_OUTPUT_PORT_TYPE
+INH => 7.IN0
+S1 => 8.IN0
+S0 => 10.IN0
+D0 => 2.IN3
+D1 => 3.IN3
+D2 => 4.IN3
+D3 => 5.IN3
+
+
+|FIFO|SRwPL:inst3
+Q3 <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+reset => inst4.ACLR
+reset => inst5.ACLR
+reset => inst6.ACLR
+reset => inst7.ACLR
+Clk => inst4.CLK
+Clk => inst5.CLK
+Clk => inst6.CLK
+Clk => inst7.CLK
+S0 => MUX41:inst.S0
+S0 => MUX41:inst1.S0
+S0 => MUX41:inst2.S0
+S0 => MUX41:inst3.S0
+IR => MUX41:inst3.D2
+S1 => MUX41:inst3.S1
+S1 => MUX41:inst2.S1
+S1 => MUX41:inst1.S1
+S1 => MUX41:inst.S1
+I0 => MUX41:inst3.D1
+I1 => MUX41:inst2.D1
+I2 => MUX41:inst1.D1
+IL => MUX41:inst.D3
+I3 => MUX41:inst.D1
+Q2 <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+Q1 <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+Q0 <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FIFO|SRwPL:inst3|MUX41:inst
+Q <= 6.DB_MAX_OUTPUT_PORT_TYPE
+INH => 7.IN0
+S1 => 8.IN0
+S0 => 10.IN0
+D0 => 2.IN3
+D1 => 3.IN3
+D2 => 4.IN3
+D3 => 5.IN3
+
+
+|FIFO|SRwPL:inst3|MUX41:inst1
+Q <= 6.DB_MAX_OUTPUT_PORT_TYPE
+INH => 7.IN0
+S1 => 8.IN0
+S0 => 10.IN0
+D0 => 2.IN3
+D1 => 3.IN3
+D2 => 4.IN3
+D3 => 5.IN3
+
+
+|FIFO|SRwPL:inst3|MUX41:inst2
+Q <= 6.DB_MAX_OUTPUT_PORT_TYPE
+INH => 7.IN0
+S1 => 8.IN0
+S0 => 10.IN0
+D0 => 2.IN3
+D1 => 3.IN3
+D2 => 4.IN3
+D3 => 5.IN3
+
+
+|FIFO|SRwPL:inst3|MUX41:inst3
+Q <= 6.DB_MAX_OUTPUT_PORT_TYPE
+INH => 7.IN0
+S1 => 8.IN0
+S0 => 10.IN0
+D0 => 2.IN3
+D1 => 3.IN3
+D2 => 4.IN3
+D3 => 5.IN3
+
+

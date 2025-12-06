@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Dec 02 09:36:33 2025
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
+Revision Name : LAB02MOORE
+Top-level Entity Name : LAB02MOORE
+Family : Cyclone II
+Total logic elements : 18
+    Total combinational functions : 18
+    Dedicated logic registers : 3
+Total registers : 3
+Total pins : 17
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

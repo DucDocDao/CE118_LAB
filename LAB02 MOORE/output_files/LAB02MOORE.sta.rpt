@@ -1,0 +1,695 @@
+TimeQuest Timing Analyzer report for LAB02MOORE
+Tue Dec 02 09:36:41 2025
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'KEY0'
+ 12. Slow Model Hold: 'KEY0'
+ 13. Slow Model Minimum Pulse Width: 'KEY0'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Propagation Delay
+ 19. Minimum Propagation Delay
+ 20. Fast Model Setup Summary
+ 21. Fast Model Hold Summary
+ 22. Fast Model Recovery Summary
+ 23. Fast Model Removal Summary
+ 24. Fast Model Minimum Pulse Width Summary
+ 25. Fast Model Setup: 'KEY0'
+ 26. Fast Model Hold: 'KEY0'
+ 27. Fast Model Minimum Pulse Width: 'KEY0'
+ 28. Setup Times
+ 29. Hold Times
+ 30. Clock to Output Times
+ 31. Minimum Clock to Output Times
+ 32. Propagation Delay
+ 33. Minimum Propagation Delay
+ 34. Multicorner Timing Analysis Summary
+ 35. Setup Times
+ 36. Hold Times
+ 37. Clock to Output Times
+ 38. Minimum Clock to Output Times
+ 39. Progagation Delay
+ 40. Minimum Progagation Delay
+ 41. Setup Transfers
+ 42. Hold Transfers
+ 43. Report TCCS
+ 44. Report RSKM
+ 45. Unconstrained Paths
+ 46. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; LAB02MOORE                                                        ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C35F672C6                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 12     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                           ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets  ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------+
+; KEY0       ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { KEY0 } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow Model Fmax Summary                                                                                   ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; 703.73 MHz ; 450.05 MHz      ; KEY0       ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Slow Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; KEY0  ; -0.421 ; -0.421        ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; KEY0  ; 0.391 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; KEY0  ; -1.222 ; -4.222                ;
++-------+--------+-----------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'KEY0'                                                                                                     ;
++--------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node             ; To Node               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+; -0.421 ; dflipflop:inst2|inst  ; dflipflop:inst10|inst ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 1.457      ;
+; -0.285 ; dflipflop:inst10|inst ; dflipflop:inst10|inst ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 1.321      ;
+; -0.166 ; dflipflop:inst|inst   ; dflipflop:inst10|inst ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 1.202      ;
+; 0.231  ; dflipflop:inst|inst   ; dflipflop:inst2|inst  ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 0.805      ;
+; 0.379  ; dflipflop:inst2|inst  ; dflipflop:inst2|inst  ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 0.657      ;
++--------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'KEY0'                                                                                                     ;
++-------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node             ; To Node               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+; 0.391 ; dflipflop:inst2|inst  ; dflipflop:inst2|inst  ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 0.657      ;
+; 0.539 ; dflipflop:inst|inst   ; dflipflop:inst2|inst  ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 0.805      ;
+; 0.936 ; dflipflop:inst|inst   ; dflipflop:inst10|inst ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 1.202      ;
+; 1.055 ; dflipflop:inst10|inst ; dflipflop:inst10|inst ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 1.321      ;
+; 1.191 ; dflipflop:inst2|inst  ; dflipflop:inst10|inst ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 1.457      ;
++-------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'KEY0'                                                                 ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------+
+; -1.222 ; 1.000        ; 2.222          ; Port Rate        ; KEY0  ; Rise       ; KEY0                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY0  ; Rise       ; dflipflop:inst10|inst ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY0  ; Rise       ; dflipflop:inst10|inst ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY0  ; Rise       ; dflipflop:inst2|inst  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY0  ; Rise       ; dflipflop:inst2|inst  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY0  ; Rise       ; dflipflop:inst|inst   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY0  ; Rise       ; dflipflop:inst|inst   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; KEY0|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; KEY0|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; inst10|inst|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; inst10|inst|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; inst2|inst|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; inst2|inst|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; inst|inst|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; inst|inst|clk         ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; SW1       ; KEY0       ; -0.166 ; -0.166 ; Rise       ; KEY0            ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Hold Times                                                            ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; SW1       ; KEY0       ; 1.096 ; 1.096 ; Rise       ; KEY0            ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; HEX00     ; KEY0       ; 10.825 ; 10.825 ; Rise       ; KEY0            ;
+; HEX01     ; KEY0       ; 10.078 ; 10.078 ; Rise       ; KEY0            ;
+; HEX02     ; KEY0       ; 10.811 ; 10.811 ; Rise       ; KEY0            ;
+; HEX03     ; KEY0       ; 10.681 ; 10.681 ; Rise       ; KEY0            ;
+; HEX04     ; KEY0       ; 9.693  ; 9.693  ; Rise       ; KEY0            ;
+; HEX05     ; KEY0       ; 10.007 ; 10.007 ; Rise       ; KEY0            ;
+; HEX06     ; KEY0       ; 10.756 ; 10.756 ; Rise       ; KEY0            ;
+; HEX10     ; KEY0       ; 8.504  ; 8.504  ; Rise       ; KEY0            ;
+; HEX11     ; KEY0       ; 8.406  ; 8.406  ; Rise       ; KEY0            ;
+; HEX12     ; KEY0       ; 8.074  ; 8.074  ; Rise       ; KEY0            ;
+; HEX13     ; KEY0       ; 8.114  ; 8.114  ; Rise       ; KEY0            ;
+; HEX14     ; KEY0       ; 8.089  ; 8.089  ; Rise       ; KEY0            ;
+; HEX15     ; KEY0       ; 8.361  ; 8.361  ; Rise       ; KEY0            ;
+; HEX16     ; KEY0       ; 8.379  ; 8.379  ; Rise       ; KEY0            ;
+; LEDR0     ; KEY0       ; 8.501  ; 8.501  ; Rise       ; KEY0            ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; HEX00     ; KEY0       ; 10.761 ; 10.761 ; Rise       ; KEY0            ;
+; HEX01     ; KEY0       ; 10.011 ; 10.011 ; Rise       ; KEY0            ;
+; HEX02     ; KEY0       ; 10.720 ; 10.720 ; Rise       ; KEY0            ;
+; HEX03     ; KEY0       ; 10.620 ; 10.620 ; Rise       ; KEY0            ;
+; HEX04     ; KEY0       ; 9.693  ; 9.693  ; Rise       ; KEY0            ;
+; HEX05     ; KEY0       ; 9.752  ; 9.752  ; Rise       ; KEY0            ;
+; HEX06     ; KEY0       ; 10.694 ; 10.694 ; Rise       ; KEY0            ;
+; HEX10     ; KEY0       ; 8.191  ; 8.191  ; Rise       ; KEY0            ;
+; HEX11     ; KEY0       ; 8.093  ; 8.093  ; Rise       ; KEY0            ;
+; HEX12     ; KEY0       ; 7.745  ; 7.745  ; Rise       ; KEY0            ;
+; HEX13     ; KEY0       ; 7.787  ; 7.787  ; Rise       ; KEY0            ;
+; HEX14     ; KEY0       ; 7.766  ; 7.766  ; Rise       ; KEY0            ;
+; HEX15     ; KEY0       ; 8.036  ; 8.036  ; Rise       ; KEY0            ;
+; HEX16     ; KEY0       ; 8.052  ; 8.052  ; Rise       ; KEY0            ;
+; LEDR0     ; KEY0       ; 8.186  ; 8.186  ; Rise       ; KEY0            ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------+
+; Propagation Delay                                        ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; SW1        ; HEX00       ; 8.639 ; 8.639 ; 8.639 ; 8.639 ;
+; SW1        ; HEX01       ;       ; 7.893 ; 7.893 ;       ;
+; SW1        ; HEX02       ; 8.616 ;       ;       ; 8.616 ;
+; SW1        ; HEX03       ; 8.484 ; 8.484 ; 8.484 ; 8.484 ;
+; SW1        ; HEX04       ;       ; 7.702 ; 7.702 ;       ;
+; SW1        ; HEX05       ; 8.420 ; 8.420 ; 8.420 ; 8.420 ;
+; SW1        ; HEX06       ;       ; 8.568 ; 8.568 ;       ;
++------------+-------------+-------+-------+-------+-------+
+
+
++----------------------------------------------------------+
+; Minimum Propagation Delay                                ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; SW1        ; HEX00       ; 8.639 ; 8.639 ; 8.639 ; 8.639 ;
+; SW1        ; HEX01       ;       ; 7.893 ; 7.893 ;       ;
+; SW1        ; HEX02       ; 8.616 ;       ;       ; 8.616 ;
+; SW1        ; HEX03       ; 8.484 ; 8.484 ; 8.484 ; 8.484 ;
+; SW1        ; HEX04       ;       ; 7.702 ; 7.702 ;       ;
+; SW1        ; HEX05       ; 8.420 ; 8.420 ; 8.420 ; 8.420 ;
+; SW1        ; HEX06       ;       ; 8.568 ; 8.568 ;       ;
++------------+-------------+-------+-------+-------+-------+
+
+
++-------------------------------+
+; Fast Model Setup Summary      ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; KEY0  ; 0.340 ; 0.000         ;
++-------+-------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; KEY0  ; 0.215 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; KEY0  ; -1.222 ; -4.222                ;
++-------+--------+-----------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'KEY0'                                                                                                    ;
++-------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node             ; To Node               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+; 0.340 ; dflipflop:inst2|inst  ; dflipflop:inst10|inst ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 0.692      ;
+; 0.406 ; dflipflop:inst10|inst ; dflipflop:inst10|inst ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 0.626      ;
+; 0.449 ; dflipflop:inst|inst   ; dflipflop:inst10|inst ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 0.583      ;
+; 0.633 ; dflipflop:inst|inst   ; dflipflop:inst2|inst  ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 0.399      ;
+; 0.665 ; dflipflop:inst2|inst  ; dflipflop:inst2|inst  ; KEY0         ; KEY0        ; 1.000        ; 0.000      ; 0.367      ;
++-------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'KEY0'                                                                                                     ;
++-------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node             ; To Node               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; dflipflop:inst2|inst  ; dflipflop:inst2|inst  ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 0.367      ;
+; 0.247 ; dflipflop:inst|inst   ; dflipflop:inst2|inst  ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 0.399      ;
+; 0.431 ; dflipflop:inst|inst   ; dflipflop:inst10|inst ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 0.583      ;
+; 0.474 ; dflipflop:inst10|inst ; dflipflop:inst10|inst ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 0.626      ;
+; 0.540 ; dflipflop:inst2|inst  ; dflipflop:inst10|inst ; KEY0         ; KEY0        ; 0.000        ; 0.000      ; 0.692      ;
++-------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'KEY0'                                                                 ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------+
+; -1.222 ; 1.000        ; 2.222          ; Port Rate        ; KEY0  ; Rise       ; KEY0                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY0  ; Rise       ; dflipflop:inst10|inst ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY0  ; Rise       ; dflipflop:inst10|inst ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY0  ; Rise       ; dflipflop:inst2|inst  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY0  ; Rise       ; dflipflop:inst2|inst  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; KEY0  ; Rise       ; dflipflop:inst|inst   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; KEY0  ; Rise       ; dflipflop:inst|inst   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; KEY0|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; KEY0|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; inst10|inst|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; inst10|inst|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; inst2|inst|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; inst2|inst|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; KEY0  ; Rise       ; inst|inst|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; KEY0  ; Rise       ; inst|inst|clk         ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; SW1       ; KEY0       ; -0.227 ; -0.227 ; Rise       ; KEY0            ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Hold Times                                                            ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; SW1       ; KEY0       ; 0.636 ; 0.636 ; Rise       ; KEY0            ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; HEX00     ; KEY0       ; 5.518 ; 5.518 ; Rise       ; KEY0            ;
+; HEX01     ; KEY0       ; 5.201 ; 5.201 ; Rise       ; KEY0            ;
+; HEX02     ; KEY0       ; 5.501 ; 5.501 ; Rise       ; KEY0            ;
+; HEX03     ; KEY0       ; 5.474 ; 5.474 ; Rise       ; KEY0            ;
+; HEX04     ; KEY0       ; 5.039 ; 5.039 ; Rise       ; KEY0            ;
+; HEX05     ; KEY0       ; 5.288 ; 5.288 ; Rise       ; KEY0            ;
+; HEX06     ; KEY0       ; 5.597 ; 5.597 ; Rise       ; KEY0            ;
+; HEX10     ; KEY0       ; 4.449 ; 4.449 ; Rise       ; KEY0            ;
+; HEX11     ; KEY0       ; 4.420 ; 4.420 ; Rise       ; KEY0            ;
+; HEX12     ; KEY0       ; 4.198 ; 4.198 ; Rise       ; KEY0            ;
+; HEX13     ; KEY0       ; 4.227 ; 4.227 ; Rise       ; KEY0            ;
+; HEX14     ; KEY0       ; 4.216 ; 4.216 ; Rise       ; KEY0            ;
+; HEX15     ; KEY0       ; 4.334 ; 4.334 ; Rise       ; KEY0            ;
+; HEX16     ; KEY0       ; 4.357 ; 4.357 ; Rise       ; KEY0            ;
+; LEDR0     ; KEY0       ; 4.507 ; 4.507 ; Rise       ; KEY0            ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; HEX00     ; KEY0       ; 5.494 ; 5.494 ; Rise       ; KEY0            ;
+; HEX01     ; KEY0       ; 5.175 ; 5.175 ; Rise       ; KEY0            ;
+; HEX02     ; KEY0       ; 5.479 ; 5.479 ; Rise       ; KEY0            ;
+; HEX03     ; KEY0       ; 5.454 ; 5.454 ; Rise       ; KEY0            ;
+; HEX04     ; KEY0       ; 5.039 ; 5.039 ; Rise       ; KEY0            ;
+; HEX05     ; KEY0       ; 5.179 ; 5.179 ; Rise       ; KEY0            ;
+; HEX06     ; KEY0       ; 5.575 ; 5.575 ; Rise       ; KEY0            ;
+; HEX10     ; KEY0       ; 4.333 ; 4.333 ; Rise       ; KEY0            ;
+; HEX11     ; KEY0       ; 4.284 ; 4.284 ; Rise       ; KEY0            ;
+; HEX12     ; KEY0       ; 4.076 ; 4.076 ; Rise       ; KEY0            ;
+; HEX13     ; KEY0       ; 4.102 ; 4.102 ; Rise       ; KEY0            ;
+; HEX14     ; KEY0       ; 4.098 ; 4.098 ; Rise       ; KEY0            ;
+; HEX15     ; KEY0       ; 4.212 ; 4.212 ; Rise       ; KEY0            ;
+; HEX16     ; KEY0       ; 4.232 ; 4.232 ; Rise       ; KEY0            ;
+; LEDR0     ; KEY0       ; 4.365 ; 4.365 ; Rise       ; KEY0            ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------+
+; Propagation Delay                                        ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; SW1        ; HEX00       ; 4.375 ; 4.375 ; 4.375 ; 4.375 ;
+; SW1        ; HEX01       ;       ; 4.057 ; 4.057 ;       ;
+; SW1        ; HEX02       ; 4.350 ;       ;       ; 4.350 ;
+; SW1        ; HEX03       ; 4.320 ; 4.320 ; 4.320 ; 4.320 ;
+; SW1        ; HEX04       ;       ; 3.982 ; 3.982 ;       ;
+; SW1        ; HEX05       ; 4.401 ; 4.401 ; 4.401 ; 4.401 ;
+; SW1        ; HEX06       ;       ; 4.449 ; 4.449 ;       ;
++------------+-------------+-------+-------+-------+-------+
+
+
++----------------------------------------------------------+
+; Minimum Propagation Delay                                ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; SW1        ; HEX00       ; 4.375 ; 4.375 ; 4.375 ; 4.375 ;
+; SW1        ; HEX01       ;       ; 4.057 ; 4.057 ;       ;
+; SW1        ; HEX02       ; 4.350 ;       ;       ; 4.350 ;
+; SW1        ; HEX03       ; 4.320 ; 4.320 ; 4.320 ; 4.320 ;
+; SW1        ; HEX04       ;       ; 3.982 ; 3.982 ;       ;
+; SW1        ; HEX05       ; 4.401 ; 4.401 ; 4.401 ; 4.401 ;
+; SW1        ; HEX06       ;       ; 4.449 ; 4.449 ;       ;
++------------+-------------+-------+-------+-------+-------+
+
+
++------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                          ;
++------------------+--------+-------+----------+---------+---------------------+
+; Clock            ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+--------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -0.421 ; 0.215 ; N/A      ; N/A     ; -1.222              ;
+;  KEY0            ; -0.421 ; 0.215 ; N/A      ; N/A     ; -1.222              ;
+; Design-wide TNS  ; -0.421 ; 0.0   ; 0.0      ; 0.0     ; -4.222              ;
+;  KEY0            ; -0.421 ; 0.000 ; N/A      ; N/A     ; -4.222              ;
++------------------+--------+-------+----------+---------+---------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; SW1       ; KEY0       ; -0.166 ; -0.166 ; Rise       ; KEY0            ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Hold Times                                                            ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; SW1       ; KEY0       ; 1.096 ; 1.096 ; Rise       ; KEY0            ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; HEX00     ; KEY0       ; 10.825 ; 10.825 ; Rise       ; KEY0            ;
+; HEX01     ; KEY0       ; 10.078 ; 10.078 ; Rise       ; KEY0            ;
+; HEX02     ; KEY0       ; 10.811 ; 10.811 ; Rise       ; KEY0            ;
+; HEX03     ; KEY0       ; 10.681 ; 10.681 ; Rise       ; KEY0            ;
+; HEX04     ; KEY0       ; 9.693  ; 9.693  ; Rise       ; KEY0            ;
+; HEX05     ; KEY0       ; 10.007 ; 10.007 ; Rise       ; KEY0            ;
+; HEX06     ; KEY0       ; 10.756 ; 10.756 ; Rise       ; KEY0            ;
+; HEX10     ; KEY0       ; 8.504  ; 8.504  ; Rise       ; KEY0            ;
+; HEX11     ; KEY0       ; 8.406  ; 8.406  ; Rise       ; KEY0            ;
+; HEX12     ; KEY0       ; 8.074  ; 8.074  ; Rise       ; KEY0            ;
+; HEX13     ; KEY0       ; 8.114  ; 8.114  ; Rise       ; KEY0            ;
+; HEX14     ; KEY0       ; 8.089  ; 8.089  ; Rise       ; KEY0            ;
+; HEX15     ; KEY0       ; 8.361  ; 8.361  ; Rise       ; KEY0            ;
+; HEX16     ; KEY0       ; 8.379  ; 8.379  ; Rise       ; KEY0            ;
+; LEDR0     ; KEY0       ; 8.501  ; 8.501  ; Rise       ; KEY0            ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; HEX00     ; KEY0       ; 5.494 ; 5.494 ; Rise       ; KEY0            ;
+; HEX01     ; KEY0       ; 5.175 ; 5.175 ; Rise       ; KEY0            ;
+; HEX02     ; KEY0       ; 5.479 ; 5.479 ; Rise       ; KEY0            ;
+; HEX03     ; KEY0       ; 5.454 ; 5.454 ; Rise       ; KEY0            ;
+; HEX04     ; KEY0       ; 5.039 ; 5.039 ; Rise       ; KEY0            ;
+; HEX05     ; KEY0       ; 5.179 ; 5.179 ; Rise       ; KEY0            ;
+; HEX06     ; KEY0       ; 5.575 ; 5.575 ; Rise       ; KEY0            ;
+; HEX10     ; KEY0       ; 4.333 ; 4.333 ; Rise       ; KEY0            ;
+; HEX11     ; KEY0       ; 4.284 ; 4.284 ; Rise       ; KEY0            ;
+; HEX12     ; KEY0       ; 4.076 ; 4.076 ; Rise       ; KEY0            ;
+; HEX13     ; KEY0       ; 4.102 ; 4.102 ; Rise       ; KEY0            ;
+; HEX14     ; KEY0       ; 4.098 ; 4.098 ; Rise       ; KEY0            ;
+; HEX15     ; KEY0       ; 4.212 ; 4.212 ; Rise       ; KEY0            ;
+; HEX16     ; KEY0       ; 4.232 ; 4.232 ; Rise       ; KEY0            ;
+; LEDR0     ; KEY0       ; 4.365 ; 4.365 ; Rise       ; KEY0            ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------+
+; Progagation Delay                                        ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; SW1        ; HEX00       ; 8.639 ; 8.639 ; 8.639 ; 8.639 ;
+; SW1        ; HEX01       ;       ; 7.893 ; 7.893 ;       ;
+; SW1        ; HEX02       ; 8.616 ;       ;       ; 8.616 ;
+; SW1        ; HEX03       ; 8.484 ; 8.484 ; 8.484 ; 8.484 ;
+; SW1        ; HEX04       ;       ; 7.702 ; 7.702 ;       ;
+; SW1        ; HEX05       ; 8.420 ; 8.420 ; 8.420 ; 8.420 ;
+; SW1        ; HEX06       ;       ; 8.568 ; 8.568 ;       ;
++------------+-------------+-------+-------+-------+-------+
+
+
++----------------------------------------------------------+
+; Minimum Progagation Delay                                ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; SW1        ; HEX00       ; 4.375 ; 4.375 ; 4.375 ; 4.375 ;
+; SW1        ; HEX01       ;       ; 4.057 ; 4.057 ;       ;
+; SW1        ; HEX02       ; 4.350 ;       ;       ; 4.350 ;
+; SW1        ; HEX03       ; 4.320 ; 4.320 ; 4.320 ; 4.320 ;
+; SW1        ; HEX04       ;       ; 3.982 ; 3.982 ;       ;
+; SW1        ; HEX05       ; 4.401 ; 4.401 ; 4.401 ; 4.401 ;
+; SW1        ; HEX06       ;       ; 4.449 ; 4.449 ;       ;
++------------+-------------+-------+-------+-------+-------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; KEY0       ; KEY0     ; 5        ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; KEY0       ; KEY0     ; 5        ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 1     ; 1    ;
+; Unconstrained Input Port Paths  ; 10    ; 10   ;
+; Unconstrained Output Ports      ; 15    ; 15   ;
+; Unconstrained Output Port Paths ; 49    ; 49   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Tue Dec 02 09:36:40 2025
+Info: Command: quartus_sta LAB02MOORE -c LAB02MOORE
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'LAB02MOORE.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name KEY0 KEY0
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -0.421
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.421        -0.421 KEY0 
+Info (332146): Worst-case hold slack is 0.391
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.391         0.000 KEY0 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.222
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.222        -4.222 KEY0 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Info (332146): Worst-case setup slack is 0.340
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.340         0.000 KEY0 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 KEY0 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case minimum pulse width slack is -1.222
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.222        -4.222 KEY0 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4542 megabytes
+    Info: Processing ended: Tue Dec 02 09:36:41 2025
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
